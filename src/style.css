@@ -1,1 +1,175 @@
 @import "tailwindcss";
+
+:root {
+	color-scheme: light;
+	font-family: "Space Grotesk", "Segoe UI", sans-serif;
+	--bg: #f4f6fb;
+	--panel: #ffffff;
+	--ink: #1f2430;
+	--muted: #5d6472;
+	--line: #dbe1ef;
+	--accent: #0b7285;
+	--accent-soft: #e3f6f5;
+}
+
+body {
+	margin: 0;
+	background:
+		radial-gradient(circle at top right, #d6f5f3 0%, transparent 36%),
+		radial-gradient(circle at top left, #e6ecff 0%, transparent 34%),
+		var(--bg);
+	color: var(--ink);
+}
+
+.canvas {
+	display: grid;
+	gap: 1rem;
+	padding-bottom: 2rem;
+}
+
+.hero {
+	background: linear-gradient(115deg, #0b7285, #1971c2);
+	color: #fff;
+	border-radius: 18px;
+	padding: 1.25rem;
+	box-shadow: 0 16px 30px -20px rgba(6, 42, 53, 0.6);
+}
+
+.hero h1 {
+	margin: 0.1rem 0 0.4rem;
+	font-size: clamp(1.5rem, 3.6vw, 2.1rem);
+}
+
+.kicker {
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.72rem;
+	opacity: 0.88;
+}
+
+.subtitle {
+	margin: 0;
+	max-width: 70ch;
+	opacity: 0.92;
+}
+
+.grid {
+	display: grid;
+	gap: 1rem;
+}
+
+.two-up {
+	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+}
+
+.panel {
+	background: color-mix(in srgb, var(--panel) 88%, #f0f3fd 12%);
+	border: 1px solid var(--line);
+	border-radius: 16px;
+	padding: 1rem;
+	box-shadow: 0 10px 24px -22px rgba(32, 48, 95, 0.95);
+}
+
+.panel h2,
+.panel h3 {
+	margin: 0 0 0.6rem;
+}
+
+.hint {
+	margin: 0 0 0.8rem;
+	color: var(--muted);
+	font-size: 0.93rem;
+}
+
+.stack {
+	display: grid;
+	gap: 0.6rem;
+}
+
+.compact {
+	margin-bottom: 0.75rem;
+}
+
+fieldset {
+	border: 1px solid var(--line);
+	border-radius: 10px;
+	margin: 0;
+	padding: 0.65rem;
+	min-width: 0;
+}
+
+legend {
+	padding: 0 0.4rem;
+	font-weight: 600;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	gap: 0.75rem;
+	align-items: center;
+	font-size: 0.96rem;
+}
+
+.ownership-row {
+	display: grid;
+	grid-template-columns: 1fr 1.25rem;
+	align-items: center;
+}
+
+.ownership-row input[type="checkbox"] {
+	width: 1rem;
+	height: 1rem;
+	margin: 0;
+	justify-self: center;
+}
+
+input,
+select,
+button {
+	font: inherit;
+}
+
+input,
+select {
+	border: 1px solid var(--line);
+	background: #fff;
+	color: var(--ink);
+	border-radius: 10px;
+	padding: 0.56rem 0.7rem;
+	width: 100%;
+}
+
+button {
+	border: 0;
+	background: var(--accent);
+	color: #fff;
+	border-radius: 10px;
+	padding: 0.58rem 0.82rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: transform 120ms ease, filter 120ms ease;
+}
+
+button:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.05);
+}
+
+ul {
+	margin: 0;
+	padding-left: 1.2rem;
+}
+
+li + li {
+	margin-top: 0.35rem;
+}
+
+@media (max-width: 640px) {
+	.hero,
+	.panel {
+		border-radius: 14px;
+		padding: 0.9rem;
+	}
+}
